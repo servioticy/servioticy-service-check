@@ -1,0 +1,20 @@
+{
+    "public": "True",
+    "name": "Device 1",
+    "actions": [],
+    "streams": {
+        "detected": {
+            "channels": {
+                "beacon": {
+                    "type": "string",
+                    "unit": "mac_address"
+                },
+                "rssi": {
+                    "type": "number",
+                    "unit": "dBm"
+                }
+            }
+        }
+    },
+    "description": "BLE Beacon #1"
+}
