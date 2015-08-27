@@ -7,5 +7,6 @@ then
 	echo "OK... verifying subscription data"
 else
 	echo "KO... verifying subscription data. No current-value found as it was expected"
+	pkill -9 node
 fi
 
