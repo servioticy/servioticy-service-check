@@ -7,7 +7,10 @@ mkdir -p $IDS_FOLDER
 
 $SCRIPTS/get_access_token.sh $START_FOLDER
 $SCRIPTS/register_so.sh $START_FOLDER
+$SCRIPTS/create_subscription.sh $START_FOLDER
+$SCRIPTS/start_subscriber.sh $START_FOLDER
 $SCRIPTS/push_data_so.sh $START_FOLDER
+$SCRIPTS/delete_subscription.sh $START_FOLDER
 $SCRIPTS/retrieve_data_so.sh $START_FOLDER
 $SCRIPTS/delete_data_so.sh $START_FOLDER
 $SCRIPTS/retrieve_no_data_so.sh $START_FOLDER
