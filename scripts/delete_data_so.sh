@@ -20,3 +20,5 @@ do
      fi
   
 done
+
+sleep 2
