@@ -6,8 +6,8 @@ cat templates/status_template.html | perl -pe "s/%DATE/$date/g" > /tmp/status.ht
 
 cat /tmp/status.txt | grep "\.\.\." | perl -pe "s/\.\.\. /\t/g" | awk  -F "[\t]" 'BEGIN{print ""}{print "<tr>";for(i=1;i<=NF;i++) if($i =="OK")print "<td bgcolor=\"#00FF00\">"$i"</td>"; else { if ($i == "KO") print "<td bgcolor=\"#FF3300\">"$i"</td>"; else print "<td>"$i"</td>";} print "</tr>"} END{print "</table></body></html>"}' >> /tmp/status.html
 
-scp /tmp/status.html autonomic.ac.upc.edu:BLOG/apache2.4/htdocs/servioticy
-scp /tmp/status.txt autonomic.ac.upc.edu:BLOG/apache2.4/htdocs/servioticy
+scp /tmp/status.html SERVER:PATH
+scp /tmp/status.txt SERVER:PATH
 
 rm /tmp/status.txt
 rm /tmp/status.html
