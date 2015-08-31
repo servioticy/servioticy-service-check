@@ -1,0 +1,41 @@
+{
+    "name": "Sample DPPv1",
+    "version": "0.1.0",
+    "groups": {
+        "AllPhones": {
+            "soIds": [PLACEHOLDER],
+            "stream": "detected"
+        }
+    },
+    "streams": {
+        "aggregate": {
+            "channels": {
+                "beacon": {
+                    "current-value": "{$AllPhones.channels.beacon.current-value}",
+                    "type": "string",
+                    "unit": "mac_address"
+                },
+                "rssi": {
+                    "current-value": "{$AllPhones.channels.rssi.current-value}",
+                    "type": "string",
+                    "unit": "mac_address"
+                }
+            }
+        },
+        "filtered": {
+            "pre-filter": "{$AllPhones.}!=null && {$AllPhones.channels.rssi.current-value}>-70",
+            "channels": {
+                "beacon": {
+                    "current-value": "{$AllPhones.channels.beacon.current-value}",
+                    "type": "string",
+                    "unit": "mac_address"
+                },
+                "rssi": {
+                    "current-value": "{$AllPhones.channels.rssi.current-value}",
+                    "type": "string",
+                    "unit": "mac_address"
+                }
+            }
+        }
+    }
+}

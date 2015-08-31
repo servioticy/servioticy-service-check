@@ -1,4 +1,3 @@
-TMPDIR=$1/tmp
 out=`cat $TMPDIR/$SAMPLE_SUBSCRIPTION_DATA | grep current-value`
 
 if [ ! -z $out ];

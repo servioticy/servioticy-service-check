@@ -1,5 +1,4 @@
 at=`cat $1/$IDS_FOLDER/$RANDOM_ACCESS_TOKEN_FILENAME`
-TMPDIR=$1/tmp
 mkdir -p $TMPDIR
 
 for file in `ls $SOS_FOLDER | head -1`

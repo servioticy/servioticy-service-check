@@ -1,0 +1,40 @@
+{
+    "name": "Sample DPPv2",
+    "version": "0.2.0",
+    "groups": {
+        "AllPhones": {
+            "soIds": [PLACEHOLDER],
+            "stream": "detected"
+        }
+    },
+    "streams": {
+        "aggregate": {
+            "channels": {
+                "beacon": {
+                    "current-value": "function(AllPhones){return AllPhones.channels.beacon['current-value']}",
+                    "type": "string",
+                    "unit": "mac_address"
+                },
+                "rssi": {
+                    "current-value": "function(AllPhones){return AllPhones.channels.rssi['current-value']}",
+                    "type": "string",
+                    "unit": "mac_address"
+                }
+            }
+        },
+        "filtered": {
+            "channels": {
+                "beacon": {
+                    "current-value": "function(AllPhones){return (AllPhones.channels.rssi['current-value']>-70) ? AllPhones.channels.beacon['current-value'] : null}",
+                    "type": "string",
+                    "unit": "mac_address"
+                },
+                "rssi": {
+                    "current-value": "function(AllPhones){return (AllPhones.channels.rssi['current-value']>-70) ? AllPhones.channels.rssi['current-value'] : null}",
+                    "type": "number",
+                    "unit": "dBm"
+                }
+            }
+        }
+    }
+}
