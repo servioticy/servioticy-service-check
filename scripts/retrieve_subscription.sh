@@ -15,4 +15,3 @@ then
 else
                 echo "OK... Retrieved subscription, ID: "$id
 fi
-  

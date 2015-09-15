@@ -7,6 +7,7 @@ do
      --write-out %{http_code} \
      -H "Content-Type: application/json;charset=UTF-8" \
      -H "Authorization: $at" \
+	  -o /dev/null \
      http://$API_PUB_NODES:$API_PUB_SEC_PORT/$id)
 
 
