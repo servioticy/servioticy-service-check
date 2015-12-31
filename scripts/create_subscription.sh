@@ -17,8 +17,8 @@ do
      then
                 echo "KO... Error creating subscription -> response: "$response
      else
-		id=`cat $1/$IDS_FOLDER/$SUBSCRIPTION_FILENAME.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
+    id=`cat $1/$IDS_FOLDER/$SUBSCRIPTION_FILENAME.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
                 echo "OK... Created subscription, ID: "$id
      fi
-  
+
 done

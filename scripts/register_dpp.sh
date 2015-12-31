@@ -4,8 +4,8 @@ IDLIST=""
 
 for file in `ls $SOS_FOLDER`
 do
-	id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
-	IDLIST=$IDLIST\"$id\",
+  id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
+  IDLIST=$IDLIST\"$id\",
 
 done
 IDLIST=`echo $IDLIST | perl -pe "s/,$//g"`
@@ -14,7 +14,7 @@ for file in `ls $DPPS_FOLDER`
 do
 
   cat $1/$DPPS_FOLDER/$file | perl -pe "s/PLACEHOLDER/$IDLIST/g" > $TMPDIR/$file
-  
+
 
   response=$(curl --digest -XPOST \
      --write-out %{http_code} \
@@ -28,8 +28,8 @@ do
      then
                 echo "KO... Error creating DPP based on $file -> response: "$response
      else
-		id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
+    id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
                 echo "OK... Created DPP based on $file, ID: "$id
      fi
-  
+
 done

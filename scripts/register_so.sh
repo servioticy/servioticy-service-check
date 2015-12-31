@@ -14,8 +14,8 @@ do
      then
                 echo "KO... Error creating SO based on $file -> response: "$response
      else
-		id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
+    id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
                 echo "OK... Created SO based on $file, ID: "$id
      fi
-  
+
 done

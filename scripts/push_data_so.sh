@@ -2,7 +2,8 @@
 for file in `ls $SOS_FOLDER`
 do
  id=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -4 | tail -1`
- at=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -8 | tail -1`
+ # at=`cat $1/$IDS_FOLDER/$file.id | perl -pe "s/\"/\n/g" | head -8 | tail -1`
+ at=`cat $1/$IDS_FOLDER/$ACCESS_TOKEN_FILENAME`
 
  response=$(curl --digest -XPUT \
      -H "Content-Type: application/json;charset=UTF-8" \
@@ -19,7 +20,7 @@ do
      else
                 echo "OK... Pushed data to SO based on $file, ID: "$id
      fi
-  
+
 done
 
 sleep 2

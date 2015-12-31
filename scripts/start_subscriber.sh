@@ -1,4 +1,4 @@
-at=`cat $1/$IDS_FOLDER/$RANDOM_ACCESS_TOKEN_FILENAME`
+at=`cat $1/$IDS_FOLDER/$ACCESS_TOKEN_FILENAME`
 mkdir -p $TMPDIR
 
 for file in `ls $SOS_FOLDER | head -1`
@@ -8,7 +8,7 @@ do
   rm -rf $TMPDIR/$SAMPLE_SUBSCRIPTION_DATA
   echo "      Subscribing to topic /topic/"$at"."$id".streams."$SAMPLE_STREAM".updates"
   $NODE_HOME/bin/node $SCRIPTS/subscriber.js $at $id $SAMPLE_STREAM > $TMPDIR/$SAMPLE_SUBSCRIPTION_DATA &
-  
+
   sleep 1
 
 done
